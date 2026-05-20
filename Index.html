@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tutorial | Test Page</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --code-bg: #161b22;
+            --sidebar-bg: #21262d;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            line-height: 1.6;
+        }
+        nav {
+            width: 250px;
+            background-color: var(--sidebar-bg);
+            height: 100vh;
+            position: fixed;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        nav h2 { color: #fff; margin-top: 0; font-size: 1.2rem; }
+        nav a { display: block; color: var(--text-color); text-decoration: none; margin: 10px 0; }
+        nav a:hover { color: var(--accent-color); }
+        main {
+            margin-left: 270px;
+            padding: 40px;
+            max-width: 800px;
+        }
+        h1, h2 { color: #fff; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
+        pre {
+            background-color: var(--code-bg);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            border: 1px solid #30363d;
+        }
+        code {
+            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+            color: #ff7b72;
+        }
+        pre code { color: #e6edf3; }
+        .keyword { color: #ff7b72; }
+        .string { color: #a5d6ff; }
+        .comment { color: #8b949e; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Python Guide</h2>
+        <a href="#intro">1. Introduction</a>
+        <a href="#variables">2. Variables</a>
+        <a href="#functions">3. Functions</a>
+    </nav>
+
+    <main>
+        <h1>Getting Started with Python</h1>
+        <p>Welcome to your first technical tutorial test page hosted on GitHub Pages.</p>
+        
+        <section id="intro">
+            <h2>1. Introduction</h2>
+            <p>Python is a high-level, interpreted programming language known for readability.</p>
+        </section>
+
+        <section id="variables">
+            <h2>2. Variables</h2>
+            <p>You can define variables easily without declaring their type:</p>
+            <pre><code><span class="comment"># This is a comment</span>
+x = <span class="string">"Hello World"</span>
+print(x)</code></pre>
+        </section>
+
+        <section id="functions">
+            <h2>3. Functions</h2>
+            <p>Functions are defined using the <code>def</code> keyword:</p>
+            <pre><code><span class="keyword">def</span> <span class="accent">greet</span>(name):
+    <span class="keyword">return</span> <span class="string">f"Hello, {name}!"</span>
+
+print(greet(<span class="string">"Developer"</span>))</code></pre>
+        </section>
+    </main>
+
+</body>
+</html>
