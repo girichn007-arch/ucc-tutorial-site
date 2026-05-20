@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My UGC Blog | Home</title>
+    <style>
+        /* Modern Minimalist CSS Theme */
+        :root {
+            --primary: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f9fafb;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Article List Styling */
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        article {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        article:last-child {
+            border-bottom: none;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .post-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .post-meta span {
+            margin-right: 15px;
+        }
+
+        .post-content {
+            font-size: 1.05rem;
+            color: #374151;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Header -->
+        <header>
+            <h1><a href="#">My UGC Blog</a></h1>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="/admin">Write a Post</a>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="post-list">
+            
+            <!-- Sample Post 1 -->
+            <article>
+                <h2 class="post-title">Welcome to the New Blog Site</h2>
+                <div class="post-meta">
+                    <span>📅 May 20, 2026</span>
+                    <span>✍️ Written by Admin</span>
+                </div>
+                <div class="post-content">
+                    <p>This is the main landing index page of our User-Generated Content (UGC) platform. Authors can sign in to add, edit, or remove articles instantly. The front-end view automatically arranges new writing samples down the page pipeline directly for visitors.</p>
+                </div>
+            </article>
+
+            <!-- Sample Post 2 -->
+            <article>
+                <h2 class="post-title">How to Structure Web Repositories on GitHub</h2>
+                <div class="post-meta">
+                    <span>📅 May 19, 2026</span>
+                    <span>✍️ Written by Guest Writer</span>
+                </div>
+                <div class="post-content">
+                    <p>Organising web structures properly makes git pipelines seamless. Always include clear configurations, dynamic asset trees, explicit readmes, and clean boilerplate index layouts directly in the base level of production repositories.</p>
+                </div>
+            </article>
+
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 My UGC Blog. Powered by dynamic code architectures.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
