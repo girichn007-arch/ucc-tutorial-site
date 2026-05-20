@@ -3,92 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Tutorial | Test Page</title>
+    <title>My UGC Blog | Home</title>
     <style>
+        /* Modern Minimalist CSS Theme */
         :root {
-            --bg-color: #0d1117;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --code-bg: #161b22;
-            --sidebar-bg: #21262d;
+            --primary: #2563eb;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --bg-gray: #f9fafb;
+            --border: #e5e7eb;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            display: flex;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-dark);
+            background-color: #ffffff;
             line-height: 1.6;
         }
-        nav {
-            width: 250px;
-            background-color: var(--sidebar-bg);
-            height: 100vh;
-            position: fixed;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        nav h2 { color: #fff; margin-top: 0; font-size: 1.2rem; }
-        nav a { display: block; color: var(--text-color); text-decoration: none; margin: 10px 0; }
-        nav a:hover { color: var(--accent-color); }
-        main {
-            margin-left: 270px;
-            padding: 40px;
+
+        .container {
             max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        h1, h2 { color: #fff; border-bottom: 1px solid #30363d; padding-bottom: 8px; }
-        pre {
-            background-color: var(--code-bg);
-            padding: 16px;
-            border-radius: 6px;
-            overflow-x: auto;
-            border: 1px solid #30363d;
+
+        /* Header Styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
-        code {
-            font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-            color: #ff7b72;
+
+        h1 a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
         }
-        pre code { color: #e6edf3; }
-        .keyword { color: #ff7b72; }
-        .string { color: #a5d6ff; }
-        .comment { color: #8b949e; }
+
+        .nav-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-left: 20px;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Article List Styling */
+        .post-list {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        article {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 30px;
+        }
+
+        article:last-child {
+            border-bottom: none;
+        }
+
+        .post-title {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .post-meta {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .post-meta span {
+            margin-right: 15px;
+        }
+
+        .post-content {
+            font-size: 1.05rem;
+            color: #374151;
+        }
+
+        /* Footer Styling */
+        footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
     </style>
 </head>
 <body>
 
-    <nav>
-        <h2>Python Guide</h2>
-        <a href="#intro">1. Introduction</a>
-        <a href="#variables">2. Variables</a>
-        <a href="#functions">3. Functions</a>
-    </nav>
+    <div class="container">
+        <!-- Navigation Header -->
+        <header>
+            <h1><a href="#">My UGC Blog</a></h1>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="/admin">Write a Post</a>
+            </nav>
+        </header>
 
-    <main>
-        <h1>Getting Started with Python</h1>
-        <p>Welcome to your first technical tutorial test page hosted on GitHub Pages.</p>
-        
-        <section id="intro">
-            <h2>1. Introduction</h2>
-            <p>Python is a high-level, interpreted programming language known for readability.</p>
-        </section>
+        <!-- Main Content Area -->
+        <main class="post-list">
+            
+            <!-- Sample Post 1 -->
+            <article>
+                <h2 class="post-title">Welcome to the New Blog Site</h2>
+                <div class="post-meta">
+                    <span>📅 May 20, 2026</span>
+                    <span>✍️ Written by Admin</span>
+                </div>
+                <div class="post-content">
+                    <p>This is the main landing index page of our User-Generated Content (UGC) platform. Authors can sign in to add, edit, or remove articles instantly. The front-end view automatically arranges new writing samples down the page pipeline directly for visitors.</p>
+                </div>
+            </article>
 
-        <section id="variables">
-            <h2>2. Variables</h2>
-            <p>You can define variables easily without declaring their type:</p>
-            <pre><code><span class="comment"># This is a comment</span>
-x = <span class="string">"Hello World"</span>
-print(x)</code></pre>
-        </section>
+            <!-- Sample Post 2 -->
+            <article>
+                <h2 class="post-title">How to Structure Web Repositories on GitHub</h2>
+                <div class="post-meta">
+                    <span>📅 May 19, 2026</span>
+                    <span>✍️ Written by Guest Writer</span>
+                </div>
+                <div class="post-content">
+                    <p>Organising web structures properly makes git pipelines seamless. Always include clear configurations, dynamic asset trees, explicit readmes, and clean boilerplate index layouts directly in the base level of production repositories.</p>
+                </div>
+            </article>
 
-        <section id="functions">
-            <h2>3. Functions</h2>
-            <p>Functions are defined using the <code>def</code> keyword:</p>
-            <pre><code><span class="keyword">def</span> <span class="accent">greet</span>(name):
-    <span class="keyword">return</span> <span class="string">f"Hello, {name}!"</span>
+        </main>
 
-print(greet(<span class="string">"Developer"</span>))</code></pre>
-        </section>
-    </main>
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 My UGC Blog. Powered by dynamic code architectures.</p>
+        </footer>
+    </div>
 
 </body>
 </html>
