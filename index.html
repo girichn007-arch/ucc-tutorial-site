@@ -3,158 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My UGC Blog | Home</title>
+    <title>Kunja Bihari Giri | Infrastructure Consultant & Cloud Expert</title>
     <style>
-        /* Modern Minimalist CSS Theme */
         :root {
-            --primary: #2563eb;
-            --text-dark: #1f2937;
-            --text-light: #4b5563;
-            --bg-gray: #f9fafb;
-            --border: #e5e7eb;
+            --primary: #0A66C2; /* LinkedIn Blue */
+            --naukri: #FF7555;  /* Naukri Orange */
+            --blog: #28a745;    /* Blog Green */
+            --dark: #1D2226;
+            --light: #F3F2EF;
+            --accent: #0073B1;
+            --text: #333333;
+            --white: #FFFFFF;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-dark);
-            background-color: #ffffff;
+            background-color: var(--light);
+            color: var(--text);
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        /* Header Styling */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-
-        h1 a {
-            color: var(--text-dark);
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .nav-links a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            margin-left: 20px;
-        }
-
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* Article List Styling */
-        .post-list {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        article {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 30px;
-        }
-
-        article:last-child {
-            border-bottom: none;
-        }
-
-        .post-title {
-            font-size: 1.5rem;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-        }
-
-        .post-meta {
-            font-size: 0.875rem;
-            color: var(--text-light);
-            margin-bottom: 15px;
-        }
-
-        .post-meta span {
-            margin-right: 15px;
-        }
-
-        .post-content {
-            font-size: 1.05rem;
-            color: #374151;
-        }
-
-        /* Footer Styling */
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid var(--border);
-            padding-top: 20px;
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 60px 20px;
             text-align: center;
-            font-size: 0.875rem;
-            color: var(--text-light);
+        }
+
+        .header-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .header-container p {
+            font-size: 1.2rem;
+            color: #A8B4B9;
+            margin-bottom: 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-connect {
+            color: var(--white);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 24px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .btn-linkedin { background-color: var(--primary); }
+        .btn-naukri { background-color: var(--naukri); }
+        .btn-blog { background-color: var(--blog); }
+
+        .btn-connect:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--dark);
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* Core Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background: var(--light);
+            padding: 12px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--dark);
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title { font-weight: bold; font-size: 1.15rem; color: var(--dark); }
+        .company-date { font-size: 0.9rem; color: #666; margin-bottom: 5px; }
+        .job-desc { font-size: 0.95rem; color: #444; }
+
+        /* Dynamic Blog Management Architecture */
+        .blog-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 20px;
+        }
+
+        .blog-post {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        .blog-title { font-size: 1.3rem; color: var(--dark); margin-bottom: 5px; }
+        .blog-date { font-size: 0.85rem; color: #888; margin-bottom: 12px; font-style: italic; }
+        
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Sidebar Archive Styling */
+        .archive-sidebar h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--dark); }
+        .archive-list { list-style: none; }
+        .archive-list li {
+            padding: 6px 10px;
+            background: var(--light);
+            margin-bottom: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .archive-list li:hover, .archive-list li.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Admin Composer Controls */
+        .admin-panel {
+            background: #f8f9fa;
+            border: 1px solid #e2e8f0;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 5px; font-size: 0.9rem; }
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        .btn-submit {
+            background: var(--blog);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 40px 20px; color: #666; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .blog-layout { grid-template-columns: 1fr; }
+            .archive-sidebar { order: -1; margin-bottom: 20px; }
+            .header-container h1 { font-size: 2rem; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .btn-group { flex-direction: column; align-items: center; }
+            .btn-connect { width: 100%; max-width: 250px; }
         }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="header-container">
+            <h1>Kunja Bihari Giri</h1>
+            <p>IT Consultant | Azure, Microsoft 365, & Infrastructure Engineering Specialist</p>
+            <div class="btn-group">
+                <a href="https://linkedin.com" target="_blank" class="btn-connect btn-linkedin">View LinkedIn Profile</a>
+                <a href="https://naukri.com" target="_blank" class="btn-connect btn-naukri">View Naukri Profile</a>
+                <a href="#ucc-blog" class="btn-connect btn-blog">UCC Blog</a>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
-        <!-- Navigation Header -->
-        <header>
-            <h1><a href="#">My UGC Blog</a></h1>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="/admin">Write a Post</a>
-            </nav>
-        </header>
+        
+        <!-- Executive Summary Section -->
+        <section id="about">
+            <h2>Professional Summary</h2>
+            <p>Highly accomplished Infrastructure and Systems Engineer with over 15 years of technical expertise. Proven track record in orchestrating enterprise cloud administration, robust collaboration network transitions, and complex system engineering. Focused on optimizing cloud efficiency and workspace architectures to drive business modernization.</p>
+        </section>
 
-        <!-- Main Content Area -->
-        <main class="post-list">
+        <!-- Core Competencies Section -->
+        <section id="skills">
+            <h2>Core Competencies & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">Azure Administration</div>
+                <div class="skill-card">Office365 Admin</div>
+                <div class="skill-card">Microsoft Copilot</div>
+                <div class="skill-card">Microsoft Teams</div>
+                <div class="skill-card">Teams Telephony</div>
+                <div class="skill-card">Skype for Business</div>
+                <div class="skill-card">System Architecture</div>
+                <div class="skill-card">Infrastructure Management</div>
+            </div>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline-item">
+                <div class="job-title">Consultant</div>
+                <div class="company-date">HCLTech | Nov 2017 - Present</div>
+                <div class="job-desc">Delivering advanced corporate infrastructure architectural consultation, specialized Azure roadmap migrations, and overseeing comprehensive hybrid cloud infrastructure frameworks.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="job-title">L3 Engineer</div>
+                <div class="company-date">Dimension Data | Jan 2017 - Nov 2017</div>
+                <div class="job-desc">Served as a Tier-3 Skype and network infrastructure administrator, resolving high-impact unified communications architecture bottlenecks.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="job-title">Lead Administrator</div>
+                <div class="company-date">Wipro | Jan 2015 - Dec 2016</div>
+                <div class="job-desc">Managed end-to-end MS Lync 2010/2013 on-premises and unified hybrid environments for multinational client divisions.</div>
+            </div>
+        </section>
+
+        <!-- Dynamic Blog Framework -->
+        <section id="ucc-blog">
+            <h2>Unified Communications & Cloud (UCC) Blog</h2>
             
-            <!-- Sample Post 1 -->
-            <article>
-                <h2 class="post-title">Welcome to the New Blog Site</h2>
-                <div class="post-meta">
-                    <span>📅 May 20, 2026</span>
-                    <span>✍️ Written by Admin</span>
+            <div class="blog-layout">
+                <!-- Blog Stream Output -->
+                <div id="blog-posts-container">
+                    <!-- JavaScript automatically loads posts here -->
                 </div>
-                <div class="post-content">
-                    <p>This is the main landing index page of our User-Generated Content (UGC) platform. Authors can sign in to add, edit, or remove articles instantly. The front-end view automatically arranges new writing samples down the page pipeline directly for visitors.</p>
-                </div>
-            </article>
 
-            <!-- Sample Post 2 -->
-            <article>
-                <h2 class="post-title">How to Structure Web Repositories on GitHub</h2>
-                <div class="post-meta">
-                    <span>📅 May 19, 2026</span>
-                    <span>✍️ Written by Guest Writer</span>
-                </div>
-                <div class="post-content">
-                    <p>Organising web structures properly makes git pipelines seamless. Always include clear configurations, dynamic asset trees, explicit readmes, and clean boilerplate index layouts directly in the base level of production repositories.</p>
-                </div>
-            </article>
-
-        </main>
-
-        <!-- Footer Section -->
-        <footer>
-            <p>&copy; 2026 My UGC Blog. Powered by dynamic code architectures.</p>
-        </footer>
-    </div>
-
-</body>
-</html>
+                <!-- Monthly Archive Sorting Menu -->
+                <div class="archive-sidebar">
